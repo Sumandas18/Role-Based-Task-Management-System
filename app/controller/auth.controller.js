@@ -30,7 +30,6 @@ const register = async (req, res, next) => {
             throw new ApiError(400, 'Email already in use');
         }
 
-        // Secure Role Assignment
         const userCount = await User.countDocuments();
         if (userCount === 0) {
             req.body.role = 'SuperAdmin';

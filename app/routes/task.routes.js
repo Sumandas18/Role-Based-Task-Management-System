@@ -5,7 +5,7 @@ const { restrictTo } = require('../middleware/role.middleware');
 
 const router = express.Router();
 
-router.use(protect); // All task routes require authentication
+router.use(protect);
 
 router
     .route('/')

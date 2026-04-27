@@ -5,7 +5,7 @@ const { restrictTo } = require('../middleware/role.middleware');
 
 const router = express.Router();
 
-router.use(protect); // All user routes require authentication
+router.use(protect);
 
 router.get('/', restrictTo('SuperAdmin', 'Admin'), userController.getAllUsers);
 router.patch('/:id/role', restrictTo('SuperAdmin'), userController.updateRole);
